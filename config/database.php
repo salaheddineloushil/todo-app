@@ -45,12 +45,12 @@ return [
 
         'mysql' => [
             'driver' => 'mysql',
-            'url' => env('DB_URL', 'mysql://rodent:cN3=qY1=pW9=hZ5_aE0-@salahlsh-todo-app-f01us-mysql.salahlsh-todo-app-f01us.svc.cluster.local:3306/todo-app'),
-            'host' => env('DB_HOST', 'salahlsh-todo-app-f01us-mysql.salahlsh-todo-app-f01us.svc.cluster.local'),
+            'url' => env('DB_URL'),
+            'host' => env('DB_HOST', 'sql304.infinityfree.com'),
             'port' => env('DB_PORT', '3306'),
-            'database' => env('DB_DATABASE', 'todo-app'),
-            'username' => env('DB_USERNAME', 'rodent'),
-            'password' => env('DB_PASSWORD', 'cN3=qY1=pW9=hZ5_aE0-'),
+            'database' => env('DB_DATABASE', 'if0_40192459_todoApp'),
+            'username' => env('DB_USERNAME', 'if0_40192459'),
+            'password' => env('DB_PASSWORD', 'VYKjhTGmcgPL'),
             'unix_socket' => env('DB_SOCKET', ''),
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
