@@ -11,7 +11,7 @@
 
     <title>@yield('title', 'TODO APP')</title>
 
-    <link rel="icon" href="https://todo-app-kemwg.sevalla.app/images/icon.png') }}" type="image/png">
+    <link rel="icon" href="https://todo-app-kemwg.sevalla.app/images/icon.png" type="image/png">
     <link rel="stylesheet" href="https://todo-app-kemwg.sevalla.app/bootstrap.min.css">
     <link rel="stylesheet" href="https://todo-app-kemwg.sevalla.app/fontawesome-free-7.1.0-web/css/all.min.css">
     <link rel="stylesheet" href="https://todo-app-kemwg.sevalla.app/css/app.css">
