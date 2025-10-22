@@ -1,8 +1,8 @@
 @extends('Partials.App')
 @section('title', 'Login')
 @section('page-css')
-    <link rel="stylesheet" href="{{ asset('css/login.css') }}">
-    <link rel="stylesheet" href="{{ asset('fontawesome-free-7.1.0-web/css/all.min.css') }}">
+    <link rel="stylesheet" href="https://todo-app-kemwg.sevalla.app/css/login.css">
+    <link rel="stylesheet" href="https://todo-app-kemwg.sevalla.app/fontawesome-free-7.1.0-web/css/all.min.css">
 @endsection
 
 @section('login')
