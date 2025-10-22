@@ -11,11 +11,11 @@
 
     <title>@yield('title', 'TODO APP')</title>
 
-    <link rel="icon" href="https://todo-app-kemwg.sevalla.app/images/icon.png" type="image/png">
-    <link rel="stylesheet" href="https://todo-app-kemwg.sevalla.app/bootstrap.min.css">
-    <link rel="stylesheet" href="https://todo-app-kemwg.sevalla.app/fontawesome-free-7.1.0-web/css/all.min.css">
-    <link rel="stylesheet" href="https://todo-app-kemwg.sevalla.app/css/app.css">
-    <script src="https://todo-app-kemwg.sevalla.app/bootstrap.bundle.min.js"></script>
+    <link rel="icon" href="{{ asset('images/icon.png') }}" type="image/png">
+    <link rel="stylesheet" href="{{ asset('bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('fontawesome-free-7.1.0-web/css/all.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <script src="{{ asset('bootstrap.bundle.min.js') }}"></script>
     @yield('page-css')
 </head>
 
