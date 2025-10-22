@@ -1,0 +1,242 @@
+.btn-hover {
+    width: 200px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    margin: 20px;
+    height: 55px;
+    text-align: center;
+    border: none;
+    background-size: 300% 100%;
+    border-radius: 50px;
+    -moz-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    -webkit-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+}
+
+.btn-hover:hover {
+    background-position: 100% 0;
+    -moz-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    -webkit-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+}
+
+.btn-hover:focus {
+    outline: none;
+}
+.btn-hover.color-8 {
+    background-image: linear-gradient(
+        to right,
+        #29323c,
+        #485563,
+        #2b5876,
+        #4e4376
+    );
+    box-shadow: 0 4px 15px 0 rgba(45, 54, 65, 0.75);
+}
+
+/* Login Form */
+.ring {
+    position: relative;
+    width: 450px;
+    height: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.ring span {
+    position: absolute;
+    inset: 0;
+    border: 2px solid #fff;
+    transition: 0.5s;
+}
+.ring span:nth-child(1) {
+    border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
+    animation: animate 6s linear infinite;
+}
+.ring span:nth-child(2) {
+    border-radius: 41% 44% 56% 59%/38% 62% 63% 37%;
+    animation: animate 4s linear infinite;
+}
+.ring span:nth-child(3) {
+    border-radius: 41% 44% 56% 59%/38% 62% 63% 37%;
+    animation: animate2 10s linear infinite;
+}
+.ring:hover span {
+    border: 6px solid var(--clr);
+    filter: drop-shadow(0 0 20px var(--clr));
+}
+@keyframes animate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+@keyframes animate2 {
+    0% {
+        transform: rotate(360deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.login-page .inputBx {
+  position: relative;
+}
+
+.login-page .inputBx input[type="password"] {
+  padding-right: 45px; /* مساحة كافية للأيقونة */
+}
+
+/* الأيقونة ديال العين */
+.login-page .toggle-password {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  font-size: 1.1em;
+  transition: color 0.3s, transform 0.2s ease;
+}
+
+.login-page .toggle-password:hover {
+  color: #00ff0a;
+  transform: translateY(-50%) scale(1.1);
+}
+
+
+.login {
+    position: absolute;
+    width: 300px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+.login h2 {
+    font-size: 2em;
+    color: #fff;
+}
+.login .inputBx {
+    position: relative;
+    width: 100%;
+}
+.login .inputBx input {
+    position: relative;
+    width: 100%;
+    padding: 12px 20px;
+    background: transparent;
+    border: 2px solid #fff;
+    border-radius: 15px;
+    font-size: 1.2em;
+    color: #fff;
+    box-shadow: none;
+    outline: none;
+}
+.login .inputBx input[type="submit"] {
+    width: 100%;
+    background: #0078ff;
+    background: linear-gradient(45deg, #ff357a, #fff172);
+    border: none;
+    cursor: pointer;
+}
+.login .inputBx input::placeholder {
+    color: rgba(255, 255, 255, 0.75);
+}
+.login .links {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+.login .links a {
+    color: #00a2ff;
+    text-decoration: none;
+}
+
+/* Footer */
+.wrapper {
+    display: inline-flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.wrapper .icon {
+    position: relative;
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 15px;
+    margin: 10px;
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* إضافة الألوان الأساسية للأيقونات */
+.wrapper .icon.facebook {
+    color: #1877f2;
+}
+
+.wrapper .icon.tiktok {
+    color: #000000;
+}
+
+.wrapper .icon.instagram {
+    color: #de0eb5;
+}
+
+.wrapper .icon.youtube {
+    color: #cd201f;
+}
+
+.wrapper .icon:hover {
+    transform: translateY(-5px);
+}
+
+.wrapper .facebook:hover {
+    background: #1877f2;
+    color: #ffffff;
+}
+
+.wrapper .tiktok:hover {
+    background: #000000;
+    color: #ffffff;
+}
+
+.wrapper .instagram:hover {
+    background: #e508b1;
+    color: #ffffff;
+}
+
+.wrapper .youtube:hover {
+    background: #cd201f;
+    color: #ffffff;
+}
+
+.wrapper .icon a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.wrapper .icon a:hover {
+    color: inherit;
+}
