@@ -504,8 +504,8 @@
       array (
         'transport' => 'smtp',
         'host' => 'in-v3.mailjet.com',
-        'port' => '587',
-        'encryption' => 'tls',
+        'port' => '25',
+        'encryption' => NULL,
         'username' => '502cfaa1a328c24411b4314db4bbd918',
         'password' => '33ae969819baacdc615a72227e1a25b4',
         'timeout' => NULL,

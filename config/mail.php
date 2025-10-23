@@ -37,8 +37,8 @@ return [
         'smtp' => [
             'transport' => 'smtp',
             'host' => env('MAIL_HOST', 'in-v3.mailjet.com'),
-            'port' => env('MAIL_PORT', 587),
-            'encryption' => env('MAIL_ENCRYPTION', 'tls'),
+            'port' => env('MAIL_PORT', 25),
+            'encryption' => env('MAIL_ENCRYPTION', null),
             'username' => env('MAIL_USERNAME','502cfaa1a328c24411b4314db4bbd918'),
             'password' => env('MAIL_PASSWORD','33ae969819baacdc615a72227e1a25b4'),
             'timeout' => null,
