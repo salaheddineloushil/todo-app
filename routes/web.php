@@ -64,7 +64,7 @@ Route::middleware('auth')->group(function () {
 
     // verification notice page
     Route::get('/email/verify', function () {
-        return view('Auth.verify_email');
+        return view('Auth.verify-email');
     })->name('verification.notice');
 
     // link de verification
