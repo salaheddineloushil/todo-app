@@ -3,10 +3,7 @@
 namespace App\Mail;
 
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
-use Illuminate\Mail\Mailables\Content;
-use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
 class MyEmail extends Mailable
@@ -23,37 +20,7 @@ class MyEmail extends Mailable
     public function build()
     {
         return $this->subject('Test Email dari Laravel')
-            ->view('Mail.myEmail')
-            ->with(['name' => $this->name]);
-    }
-
-    public function envelope()
-    {
-        return new Envelope(
-            subject: 'My Email',
-        );
-    }
-
-    /**
-     * Get the message content definition.
-     *
-     * @return \Illuminate\Mail\Mailables\Content
-     */
-    public function content()
-    {
-        return new Content(
-            view: 'Mail.myEmail',
-            with: ['name' => $this->name ?? 'Guest'],
-        );
-    }
-
-    /**
-     * Get the attachments for the message.
-     *
-     * @return array
-     */
-    public function attachments()
-    {
-        return [];
+                    ->view('Mail.myEmail')
+                    ->with(['name' => $this->name]);
     }
 }

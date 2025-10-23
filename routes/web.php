@@ -81,14 +81,30 @@ Route::middleware('auth')->group(function () {
     })->middleware(['auth', 'throttle:6,1'])->name('verification.send');
 });
 Route::get('/test-mail', function () {
-    $name = 'Salah';
-    Mail::to('salahlous46@gmail.com')->send(new MyEmail('Salah'));
-
+    try {
+        $name = 'Salah';
+        
+        // Badal \Log, st3dm logger normal
+        logger('Starting email send...');
+        
+        Mail::to('salahlous46@gmail.com')->send(new \App\Mail\MyEmail($name));
+        
+        logger('Email sent successfully');
+        
+        return response()->json(['message' => 'Email sent!']);
+        
+    } catch (\Exception $e) {
+        logger('Email error: ' . $e->getMessage());
+        return response()->json(['error' => $e->getMessage()], 500);
+    }
 });
 Route::get('/mail-config', function () {
     return [
-        'MAIL_MAILER' => env('MAIL_MAILER'),
-        'MAIL_HOST' => env('MAIL_HOST'),
-        'MAIL_PORT' => env('MAIL_PORT'),
+        'MAIL_MAILER' => config('mail.default'),
+        'MAIL_HOST' => config('mail.mailers.smtp.host'),
+        'MAIL_PORT' => config('mail.mailers.smtp.port'),
+        'MAIL_USERNAME' => config('mail.mailers.smtp.username'),
+        'MAIL_ENCRYPTION' => config('mail.mailers.smtp.encryption'),
+        'MAIL_FROM' => config('mail.from'),
     ];
 });
