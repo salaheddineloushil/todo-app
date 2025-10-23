@@ -90,7 +90,7 @@ Route::get('/send-mailjet-api', function () {
         'Messages' => [
             [
                 'From' => [
-                    'Email' => "no-reply@todo-app.com",
+                    'Email' => "salahlsh4@gmail.com",
                     'Name' => "TODO_APP"
                 ],
                 'To' => [
