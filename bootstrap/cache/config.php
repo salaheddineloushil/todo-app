@@ -504,8 +504,8 @@
       array (
         'transport' => 'smtp',
         'host' => 'smtp.gmail.com',
-        'port' => '465',
-        'encryption' => NULL,
+        'port' => '587',
+        'encryption' => 'tls',
         'username' => 'salahlsh4@gmail.com',
         'password' => 'bzdeqsjjsdcaiapc',
         'timeout' => NULL,
