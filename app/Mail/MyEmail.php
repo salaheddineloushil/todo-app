@@ -43,7 +43,8 @@ class MyEmail extends Mailable
     public function content()
     {
         return new Content(
-            view: 'view.name',
+            view: 'Mail.myEmail',
+            with: [ 'name' => $this->name ?? 'Guest' ],
         );
     }
 

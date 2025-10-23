@@ -500,14 +500,18 @@
     'default' => 'smtp',
     'mailers' => 
     array (
+      'mailtrap' => 
+      array (
+        'transport' => 'mailtrap',
+      ),
       'smtp' => 
       array (
         'transport' => 'smtp',
-        'host' => 'smtp.gmail.com',
+        'host' => 'sandbox.smtp.mailtrap.io',
         'port' => '587',
         'encryption' => 'tls',
-        'username' => 'salahlsh4@gmail.com',
-        'password' => 'bzdeqsjjsdcaiapc',
+        'username' => 'e4064bc938075c',
+        'password' => 'c12cdbaba4604f',
         'timeout' => NULL,
         'local_domain' => NULL,
       ),

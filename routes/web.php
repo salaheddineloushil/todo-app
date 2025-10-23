@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CategorieController;
 use App\Http\Controllers\TaskController;
 use App\Http\Controllers\UserController;
+use App\Mail\MyEmail;
 use App\Models\Categorie;
 use App\Models\Task;
 use App\Models\User;
@@ -80,15 +81,9 @@ Route::middleware('auth')->group(function () {
     })->middleware(['auth', 'throttle:6,1'])->name('verification.send');
 });
 Route::get('/test-mail', function () {
-    try {
-        Mail::raw('Test Gmail SMTP!', function($message){
-            $message->to('salahlsh4@gmail.com')
-                    ->subject('Test Email');
-        });
-        return 'Email sent!';
-    } catch (\Exception $e) {
-        return $e->getMessage();
-    }
+    $name = 'Salah';
+    Mail::to('salahlous46@gmail.com')->send(new MyEmail($name));
+
 });
 Route::get('/mail-config', function () {
     return [
