@@ -19,6 +19,11 @@
                 {{ session('success') }}
             </div>
         @endif
+        @if (session('error'))
+            <div class="error-box">
+                {{ session('error') }}
+            </div>
+        @endif
         <div class="ring p-4 ">
             <span style="--clr:#00ff0a;"></span>
             <span style="--clr:#ff0057;"></span>

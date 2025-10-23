@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -17,19 +18,31 @@ class AuthController extends Controller
         return view('Auth.Login');
     }
 
-    public function LoginStore(Request $request)
-    {
-        $request->validate([
-            'email' => 'required|email',
-            'password' => 'required|string|min:8',
-        ]);
-        if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
-            return redirect()->route('Dashboard')->with('success', 'Logged in successfully.');
+public function LoginStore(Request $request)
+{
+    $request->validate([
+        'email' => 'required|email',
+        'password' => 'required|string|min:8',
+    ]);
+
+    if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
+        $user = Auth::user();
+
+        // ✅ تحقق من تفعيل الإيميل
+        if (!$user->hasVerifiedEmail()) {
+            return redirect()->route('verification.notice')
+                ->with('error', 'Please verify your email before logging in.');
         }
-        return redirect()->back()->withErrors([
-            'email' => 'Email or password is incorrect.',
-        ])->withInput();
+
+        // ✅ إلى كان verified
+        return redirect()->route('Dashboard')->with('success', 'Logged in successfully.');
     }
+
+    return redirect()->back()->withErrors([
+        'email' => 'Email or password is incorrect.',
+    ])->withInput();
+}
+
 
     public function SignUp()
     {
@@ -49,8 +62,11 @@ class AuthController extends Controller
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
+
+        event(new Registered($user));
+
         Auth::login($user);
-        return redirect()->route('Dashboard')->with('success', 'Account created successfully.');
+        return redirect()->route('verification.notice');
     }
     public function logout()
     {
