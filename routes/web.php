@@ -86,3 +86,10 @@ Route::get('/test-mail', function () {
     });
     return 'Email sent!';
 });
+Route::get('/mail-config', function () {
+    return [
+        'MAIL_MAILER' => env('MAIL_MAILER'),
+        'MAIL_HOST' => env('MAIL_HOST'),
+        'MAIL_PORT' => env('MAIL_PORT'),
+    ];
+});
