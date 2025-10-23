@@ -80,11 +80,15 @@ Route::middleware('auth')->group(function () {
     })->middleware(['auth', 'throttle:6,1'])->name('verification.send');
 });
 Route::get('/test-mail', function () {
-    Mail::raw('Hadi test email!', function($message){
-        $message->to('salahlsh4@gmail.com')
-                ->subject('Test Email SMTP');
-    });
-    return 'Email sent!';
+    try {
+        Mail::raw('Test Gmail SMTP!', function($message){
+            $message->to('salahlsh4@gmail.com')
+                    ->subject('Test Email');
+        });
+        return 'Email sent!';
+    } catch (\Exception $e) {
+        return $e->getMessage();
+    }
 });
 Route::get('/mail-config', function () {
     return [
