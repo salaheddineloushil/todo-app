@@ -79,7 +79,10 @@ Route::middleware('auth')->group(function () {
         return back()->with('message', 'Verification link sent!');
     })->middleware(['auth', 'throttle:6,1'])->name('verification.send');
 });
-Mail::raw('Test email', function($message){
-    $message->to('salahlsh4@gmail.com')
-            ->subject('Test Email');
+Route::get('/test-mail', function () {
+    Mail::raw('Hadi test email!', function($message){
+        $message->to('salahlsh4@gmail.com')
+                ->subject('Test Email SMTP');
+    });
+    return 'Email sent!';
 });
