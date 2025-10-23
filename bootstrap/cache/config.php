@@ -507,7 +507,7 @@
         'port' => '587',
         'encryption' => 'tls',
         'username' => 'salahlsh4@gmail.com',
-        'password' => 'bzde qsjj sdca iapc',
+        'password' => 'bzdeqsjjsdcaiapc',
         'timeout' => NULL,
         'local_domain' => NULL,
       ),
