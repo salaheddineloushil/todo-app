@@ -497,17 +497,17 @@
   ),
   'mail' => 
   array (
-    'default' => 'mailjet-api',
+    'default' => 'smtp',
     'mailers' => 
     array (
       'smtp' => 
       array (
         'transport' => 'smtp',
         'host' => 'smtp.gmail.com',
-        'port' => 587,
+        'port' => '587',
         'encryption' => 'tls',
-        'username' => '502cfaa1a328c24411b4314db4bbd918',
-        'password' => 'ce4fa24b50dfd6ad01e1d3df4f6a991b',
+        'username' => 'salahlsh4@gmail.com',
+        'password' => 'qwnylhdiiuuuymyd',
         'timeout' => NULL,
         'local_domain' => NULL,
       ),

@@ -16,7 +16,7 @@ use Mailjet\Client;
 use Mailjet\Resources;
 
 // Auth + verified users routes
-Route::middleware(['auth', 'verified'])->group(function () {
+Route::middleware(['auth'])->group(function () {
 
     // Dashboard
     Route::get('/', function () {
@@ -27,7 +27,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     })->name('Dashboard');
 
     // Users
-    Route::resource('users', UserController::class);
+    Route::resource('users', UserController::class)->middleware('role:manager:admin');
 
     // Tasks
     Route::resource('tasks', TaskController::class)
@@ -60,70 +60,4 @@ Route::middleware('guest')->controller(AuthController::class)->group(function ()
     Route::post('/forgotPassword', 'ForgotPasswordStore')->name('ForgotPasswordStore');
     Route::get('/resetPassword/{token}', 'ResetPassword')->name('password.reset');
     Route::post('/resetPassword', 'ResetPasswordStore')->name('password.update');
-});
-
-// Routes verification d'email
-Route::middleware('auth')->group(function () {
-
-    // verification notice page
-    Route::get('/email/verify', function () {
-        return view('Auth.verify-email');
-    })->name('verification.notice');
-
-    // link de verification
-    Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
-        $request->fulfill();
-        return redirect('/')->with('success', 'Email verified successfully!');
-    })->middleware(['auth', 'signed'])->name('verification.verify');
-
-    // resend verification link
-    Route::post('/email/verification-notification', function (Request $request) {
-        $request->user()->sendEmailVerificationNotification();
-        return back()->with('message', 'Verification link sent!');
-    })->middleware(['auth', 'throttle:6,1'])->name('verification.send');
-});
-
-Route::get('/send-mailjet-api', function () {
-    $mj = new Client(env('MAIL_USERNAME'), env('MAIL_PASSWORD'), true, ['version' => 'v3.1']);
-
-    $body = [
-        'Messages' => [
-            [
-                'From' => [
-                    'Email' => "salahlsh4@gmail.com",
-                    'Name' => "TODO_APP"
-                ],
-                'To' => [
-                    [
-                        'Email' => "salahlsh4@gmail.com",
-                        'Name' => "Salah"
-                    ]
-                ],
-                'Subject' => "Test Email via Mailjet API",
-                'TextPart' => "Salut Salah, ceci est un test depuis Mailjet API!",
-                'HTMLPart' => "<h3>Salut Salah</h3><p>Ceci est un test depuis Mailjet API!</p>"
-            ]
-        ]
-    ];
-
-    $response = $mj->post(Resources::$Email, ['body' => $body]);
-
-    $response = $mj->post(Resources::$Email, ['body' => $body]);
-
-    return response()->json([
-        'success' => $response->success(),
-        'status' => $response->getStatus(),
-        'body' => $response->getBody(),
-    ]);
-});
-
-Route::get('/mail-config', function () {
-    return [
-        'MAIL_MAILER' => config('mail.default'),
-        'MAIL_HOST' => config('mail.mailers.smtp.host'),
-        'MAIL_PORT' => config('mail.mailers.smtp.port'),
-        'MAIL_USERNAME' => config('mail.mailers.smtp.username'),
-        'MAIL_ENCRYPTION' => config('mail.mailers.smtp.encryption'),
-        'MAIL_FROM' => config('mail.from'),
-    ];
 });

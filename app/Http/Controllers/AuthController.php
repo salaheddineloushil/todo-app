@@ -18,30 +18,23 @@ class AuthController extends Controller
         return view('Auth.Login');
     }
 
-public function LoginStore(Request $request)
-{
-    $request->validate([
-        'email' => 'required|email',
-        'password' => 'required|string|min:8',
-    ]);
+    public function LoginStore(Request $request)
+    {
+        $request->validate([
+            'email' => 'required|email',
+            'password' => 'required|string|min:8',
+        ]);
 
-    if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
-        $user = Auth::user();
-
-        // ✅ تحقق من تفعيل الإيميل
-        if (!$user->hasVerifiedEmail()) {
-            return redirect()->route('verification.notice')
-                ->with('error', 'Please verify your email before logging in.');
+        if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
+            $user = Auth::user();
+            Auth::login($user);
+            return redirect()->route('Dashboard')->with('success', 'Logged in successfully.');
         }
 
-        // ✅ إلى كان verified
-        return redirect()->route('Dashboard')->with('success', 'Logged in successfully.');
+        return redirect()->back()->withErrors([
+            'email' => 'Email or password is incorrect.',
+        ])->withInput();
     }
-
-    return redirect()->back()->withErrors([
-        'email' => 'Email or password is incorrect.',
-    ])->withInput();
-}
 
 
     public function SignUp()
@@ -63,10 +56,8 @@ public function LoginStore(Request $request)
             'password' => Hash::make($request->password),
         ]);
 
-        event(new Registered($user));
-
         Auth::login($user);
-        return redirect()->route('verification.notice');
+        return redirect()->route('dashboard')->with('success', 'Bienvenue!');
     }
     public function logout()
     {
