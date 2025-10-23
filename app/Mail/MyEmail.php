@@ -13,21 +13,20 @@ class MyEmail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    /**
-     * Create a new message instance.
-     *
-     * @return void
-     */
-    public function __construct()
+    public $name;
+
+    public function __construct($name = 'Guest')
     {
-        //
+        $this->name = $name;
     }
 
-    /**
-     * Get the message envelope.
-     *
-     * @return \Illuminate\Mail\Mailables\Envelope
-     */
+    public function build()
+    {
+        return $this->subject('Test Email dari Laravel')
+            ->view('Mail.myEmail')
+            ->with(['name' => $this->name]);
+    }
+
     public function envelope()
     {
         return new Envelope(
@@ -44,7 +43,7 @@ class MyEmail extends Mailable
     {
         return new Content(
             view: 'Mail.myEmail',
-            with: [ 'name' => $this->name ?? 'Guest' ],
+            with: ['name' => $this->name ?? 'Guest'],
         );
     }
 

@@ -82,7 +82,7 @@ Route::middleware('auth')->group(function () {
 });
 Route::get('/test-mail', function () {
     $name = 'Salah';
-    Mail::to('salahlous46@gmail.com')->send(new MyEmail($name));
+    Mail::to('salahlous46@gmail.com')->send(new MyEmail('Salah'));
 
 });
 Route::get('/mail-config', function () {

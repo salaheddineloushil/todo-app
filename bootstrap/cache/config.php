@@ -503,12 +503,18 @@
       'mailtrap' => 
       array (
         'transport' => 'mailtrap',
+        'host' => 'sandbox.smtp.mailtrap.io',
+        'port' => 2525,
+        'username' => NULL,
+        'password' => NULL,
+        'timeout' => NULL,
+        'encryption' => NULL,
       ),
       'smtp' => 
       array (
         'transport' => 'smtp',
         'host' => 'sandbox.smtp.mailtrap.io',
-        'port' => '587',
+        'port' => '2525',
         'encryption' => 'tls',
         'username' => 'e4064bc938075c',
         'password' => 'c12cdbaba4604f',
