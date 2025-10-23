@@ -29,6 +29,10 @@ Route::middleware(['auth'])->group(function () {
     // Users
     Route::resource('users', UserController::class)->middleware('role:manager:admin');
 
+    Route::middleware('role:manager,admin,user')->group(function () {
+        Route::resource('users', UserController::class)->only('show');
+    });
+
     // Tasks
     Route::resource('tasks', TaskController::class)
         ->middleware('role:manager,admin');
