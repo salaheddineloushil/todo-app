@@ -12,6 +12,8 @@ use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
+use Mailjet\Client;
+use Mailjet\Resources;
 
 // Auth + verified users routes
 Route::middleware(['auth', 'verified'])->group(function () {
@@ -80,8 +82,6 @@ Route::middleware('auth')->group(function () {
         return back()->with('message', 'Verification link sent!');
     })->middleware(['auth', 'throttle:6,1'])->name('verification.send');
 });
-use Mailjet\Client;
-use Mailjet\Resources;
 
 Route::get('/send-mailjet-api', function () {
     $mj = new Client(env('MAIL_USERNAME'), env('MAIL_PASSWORD'), true, ['version' => 'v3.1']);
@@ -95,7 +95,7 @@ Route::get('/send-mailjet-api', function () {
                 ],
                 'To' => [
                     [
-                        'Email' => "salahlous46@gmail.com",
+                        'Email' => "salahlsh4@gmail.com",
                         'Name' => "Salah"
                     ]
                 ],
