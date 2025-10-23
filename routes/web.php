@@ -85,7 +85,7 @@ Route::middleware('auth')->group(function () {
 
 Route::get('/send-mailjet-api', function () {
     $mj = new Client(env('MAIL_USERNAME'), env('MAIL_PASSWORD'), true, ['version' => 'v3.1']);
-    
+
     $body = [
         'Messages' => [
             [
@@ -105,10 +105,16 @@ Route::get('/send-mailjet-api', function () {
             ]
         ]
     ];
-    
+
     $response = $mj->post(Resources::$Email, ['body' => $body]);
-    
-    return $response->success() ? 'Email sent ✅' : 'Error ❌';
+
+    $response = $mj->post(Resources::$Email, ['body' => $body]);
+
+    return response()->json([
+        'success' => $response->success(),
+        'status' => $response->getStatus(),
+        'body' => $response->getBody(),
+    ]);
 });
 
 Route::get('/mail-config', function () {
