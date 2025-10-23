@@ -37,10 +37,10 @@ return [
         'smtp' => [
             'transport' => 'smtp',
             'host' => env('MAIL_HOST', 'in-v3.mailjet.com'),
-            'port' => env('MAIL_PORT', 25),
-            'encryption' => env('MAIL_ENCRYPTION', null),
-            'username' => env('MAIL_USERNAME','502cfaa1a328c24411b4314db4bbd918'),
-            'password' => env('MAIL_PASSWORD','33ae969819baacdc615a72227e1a25b4'),
+            'port' => env('MAIL_PORT', 587),
+            'encryption' => env('MAIL_ENCRYPTION', 'tls'),
+            'username' => env('MAIL_USERNAME', '502cfaa1a328c24411b4314db4bbd918'),
+            'password' => env('MAIL_PASSWORD', '33ae969819baacdc615a72227e1a25b4'),
             'timeout' => null,
             'local_domain' => env('MAIL_EHLO_DOMAIN'),
         ],
@@ -114,5 +114,13 @@ return [
             resource_path('views/vendor/mail'),
         ],
     ],
+    'stream' => [
+        'ssl' => [
+            'allow_self_signed' => true,
+            'verify_peer' => false,
+            'verify_peer_name' => false,
+        ],
+    ],
+
 
 ];
