@@ -505,7 +505,7 @@
         'transport' => 'smtp',
         'host' => 'smtp.gmail.com',
         'port' => '465',
-        'encryption' => 'ssl',
+        'encryption' => NULL,
         'username' => 'salahlsh4@gmail.com',
         'password' => 'bzdeqsjjsdcaiapc',
         'timeout' => NULL,
