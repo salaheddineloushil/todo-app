@@ -503,11 +503,11 @@
       'smtp' => 
       array (
         'transport' => 'smtp',
-        'host' => 'smtp.gmail.com',
+        'host' => 'in-v3.mailjet.com',
         'port' => '587',
         'encryption' => 'tls',
-        'username' => 'salahlsh4@gmail.com',
-        'password' => 'bzdeqsjjsdcaiapc',
+        'username' => '502cfaa1a328c24411b4314db4bbd918',
+        'password' => '33ae969819baacdc615a72227e1a25b4',
         'timeout' => NULL,
         'local_domain' => NULL,
       ),

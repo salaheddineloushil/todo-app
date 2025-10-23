@@ -36,11 +36,11 @@ return [
     'mailers' => [
         'smtp' => [
             'transport' => 'smtp',
-            'host' => env('MAIL_HOST', 'smtp.gmail.com'),
+            'host' => env('MAIL_HOST', 'in-v3.mailjet.com'),
             'port' => env('MAIL_PORT', 587),
             'encryption' => env('MAIL_ENCRYPTION', 'tls'),
-            'username' => env('MAIL_USERNAME','salahlsh4@gmail.com'),
-            'password' => env('MAIL_PASSWORD'),
+            'username' => env('MAIL_USERNAME','502cfaa1a328c24411b4314db4bbd918'),
+            'password' => env('MAIL_PASSWORD','33ae969819baacdc615a72227e1a25b4'),
             'timeout' => null,
             'local_domain' => env('MAIL_EHLO_DOMAIN'),
         ],
