@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'default' => env('MAIL_MAILER', 'smtp'),
+    'default' => env('MAIL_MAILER', 'mailjet'),
 
     /*
     |--------------------------------------------------------------------------
@@ -48,6 +48,10 @@ return [
         'ses' => [
             'transport' => 'ses',
         ],
+        'mailjet' => [
+            'transport' => 'mailjet', // مجرد تسمية، الكود غادي يستعمل SDK مباشرة
+        ],
+
 
         'mailgun' => [
             'transport' => 'mailgun',

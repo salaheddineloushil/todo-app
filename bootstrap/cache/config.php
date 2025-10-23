@@ -497,23 +497,27 @@
   ),
   'mail' => 
   array (
-    'default' => 'smtp',
+    'default' => 'mailjet-api',
     'mailers' => 
     array (
       'smtp' => 
       array (
         'transport' => 'smtp',
         'host' => 'smtp.gmail.com',
-        'port' => '587',
+        'port' => 587,
         'encryption' => 'tls',
-        'username' => 'salahlsh4@gmail.com',
-        'password' => 'qwnylhdiiuuuymyd',
+        'username' => '502cfaa1a328c24411b4314db4bbd918',
+        'password' => 'ce4fa24b50dfd6ad01e1d3df4f6a991b',
         'timeout' => NULL,
         'local_domain' => NULL,
       ),
       'ses' => 
       array (
         'transport' => 'ses',
+      ),
+      'mailjet' => 
+      array (
+        'transport' => 'mailjet',
       ),
       'mailgun' => 
       array (
@@ -696,6 +700,91 @@
       0 => 'C:\\Users\\salah\\Documents\\projects\\todo-app\\resources\\views',
     ),
     'compiled' => 'C:\\Users\\salah\\Documents\\projects\\todo-app\\storage\\framework\\views',
+  ),
+  'flare' => 
+  array (
+    'key' => NULL,
+    'flare_middleware' => 
+    array (
+      0 => 'Spatie\\FlareClient\\FlareMiddleware\\RemoveRequestIp',
+      1 => 'Spatie\\FlareClient\\FlareMiddleware\\AddGitInformation',
+      2 => 'Spatie\\LaravelIgnition\\FlareMiddleware\\AddNotifierName',
+      3 => 'Spatie\\LaravelIgnition\\FlareMiddleware\\AddEnvironmentInformation',
+      4 => 'Spatie\\LaravelIgnition\\FlareMiddleware\\AddExceptionInformation',
+      5 => 'Spatie\\LaravelIgnition\\FlareMiddleware\\AddDumps',
+      'Spatie\\LaravelIgnition\\FlareMiddleware\\AddLogs' => 
+      array (
+        'maximum_number_of_collected_logs' => 200,
+      ),
+      'Spatie\\LaravelIgnition\\FlareMiddleware\\AddQueries' => 
+      array (
+        'maximum_number_of_collected_queries' => 200,
+        'report_query_bindings' => true,
+      ),
+      'Spatie\\LaravelIgnition\\FlareMiddleware\\AddJobs' => 
+      array (
+        'max_chained_job_reporting_depth' => 5,
+      ),
+      'Spatie\\FlareClient\\FlareMiddleware\\CensorRequestBodyFields' => 
+      array (
+        'censor_fields' => 
+        array (
+          0 => 'password',
+          1 => 'password_confirmation',
+        ),
+      ),
+      'Spatie\\FlareClient\\FlareMiddleware\\CensorRequestHeaders' => 
+      array (
+        'headers' => 
+        array (
+          0 => 'API-KEY',
+        ),
+      ),
+    ),
+    'send_logs_as_events' => true,
+  ),
+  'ignition' => 
+  array (
+    'editor' => 'phpstorm',
+    'theme' => 'auto',
+    'enable_share_button' => true,
+    'register_commands' => false,
+    'solution_providers' => 
+    array (
+      0 => 'Spatie\\Ignition\\Solutions\\SolutionProviders\\BadMethodCallSolutionProvider',
+      1 => 'Spatie\\Ignition\\Solutions\\SolutionProviders\\MergeConflictSolutionProvider',
+      2 => 'Spatie\\Ignition\\Solutions\\SolutionProviders\\UndefinedPropertySolutionProvider',
+      3 => 'Spatie\\LaravelIgnition\\Solutions\\SolutionProviders\\IncorrectValetDbCredentialsSolutionProvider',
+      4 => 'Spatie\\LaravelIgnition\\Solutions\\SolutionProviders\\MissingAppKeySolutionProvider',
+      5 => 'Spatie\\LaravelIgnition\\Solutions\\SolutionProviders\\DefaultDbNameSolutionProvider',
+      6 => 'Spatie\\LaravelIgnition\\Solutions\\SolutionProviders\\TableNotFoundSolutionProvider',
+      7 => 'Spatie\\LaravelIgnition\\Solutions\\SolutionProviders\\MissingImportSolutionProvider',
+      8 => 'Spatie\\LaravelIgnition\\Solutions\\SolutionProviders\\InvalidRouteActionSolutionProvider',
+      9 => 'Spatie\\LaravelIgnition\\Solutions\\SolutionProviders\\ViewNotFoundSolutionProvider',
+      10 => 'Spatie\\LaravelIgnition\\Solutions\\SolutionProviders\\RunningLaravelDuskInProductionProvider',
+      11 => 'Spatie\\LaravelIgnition\\Solutions\\SolutionProviders\\MissingColumnSolutionProvider',
+      12 => 'Spatie\\LaravelIgnition\\Solutions\\SolutionProviders\\UnknownValidationSolutionProvider',
+      13 => 'Spatie\\LaravelIgnition\\Solutions\\SolutionProviders\\MissingMixManifestSolutionProvider',
+      14 => 'Spatie\\LaravelIgnition\\Solutions\\SolutionProviders\\MissingViteManifestSolutionProvider',
+      15 => 'Spatie\\LaravelIgnition\\Solutions\\SolutionProviders\\MissingLivewireComponentSolutionProvider',
+      16 => 'Spatie\\LaravelIgnition\\Solutions\\SolutionProviders\\UndefinedViewVariableSolutionProvider',
+      17 => 'Spatie\\LaravelIgnition\\Solutions\\SolutionProviders\\GenericLaravelExceptionSolutionProvider',
+    ),
+    'ignored_solution_providers' => 
+    array (
+    ),
+    'enable_runnable_solutions' => NULL,
+    'remote_sites_path' => 'C:\\Users\\salah\\Documents\\projects\\todo-app',
+    'local_sites_path' => '',
+    'housekeeping_endpoint_prefix' => '_ignition',
+    'settings_file_path' => '',
+    'recorders' => 
+    array (
+      0 => 'Spatie\\LaravelIgnition\\Recorders\\DumpRecorder\\DumpRecorder',
+      1 => 'Spatie\\LaravelIgnition\\Recorders\\JobRecorder\\JobRecorder',
+      2 => 'Spatie\\LaravelIgnition\\Recorders\\LogRecorder\\LogRecorder',
+      3 => 'Spatie\\LaravelIgnition\\Recorders\\QueryRecorder\\QueryRecorder',
+    ),
   ),
   'tinker' => 
   array (

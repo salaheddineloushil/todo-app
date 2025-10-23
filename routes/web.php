@@ -80,24 +80,37 @@ Route::middleware('auth')->group(function () {
         return back()->with('message', 'Verification link sent!');
     })->middleware(['auth', 'throttle:6,1'])->name('verification.send');
 });
-Route::get('/test-mail', function () {
-    try {
-        $name = 'Salah';
-        
-        // Badal \Log, st3dm logger normal
-        logger('Starting email send...');
-        
-        Mail::to('salahlous46@gmail.com')->send(new \App\Mail\MyEmail($name));
-        
-        logger('Email sent successfully');
-        
-        return response()->json(['message' => 'Email sent!']);
-        
-    } catch (\Exception $e) {
-        logger('Email error: ' . $e->getMessage());
-        return response()->json(['error' => $e->getMessage()], 500);
-    }
+use Mailjet\Client;
+use Mailjet\Resources;
+
+Route::get('/send-mailjet-api', function () {
+    $mj = new Client(env('MAIL_USERNAME'), env('MAIL_PASSWORD'), true, ['version' => 'v3.1']);
+    
+    $body = [
+        'Messages' => [
+            [
+                'From' => [
+                    'Email' => "no-reply@todo-app.com",
+                    'Name' => "TODO_APP"
+                ],
+                'To' => [
+                    [
+                        'Email' => "salahlous46@gmail.com",
+                        'Name' => "Salah"
+                    ]
+                ],
+                'Subject' => "Test Email via Mailjet API",
+                'TextPart' => "Salut Salah, ceci est un test depuis Mailjet API!",
+                'HTMLPart' => "<h3>Salut Salah</h3><p>Ceci est un test depuis Mailjet API!</p>"
+            ]
+        ]
+    ];
+    
+    $response = $mj->post(Resources::$Email, ['body' => $body]);
+    
+    return $response->success() ? 'Email sent ✅' : 'Error ❌';
 });
+
 Route::get('/mail-config', function () {
     return [
         'MAIL_MAILER' => config('mail.default'),
