@@ -27,6 +27,14 @@ class AuthController extends Controller
 
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
             $user = Auth::user();
+
+            // // check if email verified
+            // if (!Auth::user()->hasVerifiedEmail()) {
+            //     Auth::login($user);
+            //     return redirect()->route('verification.notice')
+            //         ->with('message', 'You need to verify your email first.');
+            // }
+
             Auth::login($user);
             return redirect()->route('Dashboard')->with('success', 'Logged in successfully.');
         }
@@ -58,51 +66,59 @@ class AuthController extends Controller
 
         Auth::login($user);
         return redirect()->route('Dashboard')->with('success', 'Bienvenue!');
+
+        // // Laravel sends verification email automatically
+        // $user->sendEmailVerificationNotification();
+
+        // auth()->login($user);
+
+        // // redirect to verification page
+        // return redirect()->route('verification.notice');
     }
     public function logout()
     {
         Auth::logout();
         return redirect()->route('login')->with('success', 'Logged out successfully.');
     }
-    public function ForgotPassword()
-    {
-        return view('Auth.ForgotPassword');
-    }
-    public function ForgotPasswordStore(Request $request)
-    {
-        $request->validate([
-            'email' => 'required|email|exists:users,email',
-        ]);
+    // public function ForgotPassword()
+    // {
+    //     return view('Auth.ForgotPassword');
+    // }
+    // public function ForgotPasswordStore(Request $request)
+    // {
+    //     $request->validate([
+    //         'email' => 'required|email|exists:users,email',
+    //     ]);
 
-        $status = Password::sendResetLink(
-            $request->only('email')
-        );
+    //     $status = Password::sendResetLink(
+    //         $request->only('email')
+    //     );
 
-        return $status === Password::RESET_LINK_SENT
-            ? back()->with('success', __($status))
-            : back()->withErrors(['email' => __($status)]);
-    }
-    public function ResetPassword($token)
-    {
-        return view('Auth.PasswordReset', ['token' => $token]);
-    }
-    public function ResetPasswordStore(Request $request)
-    {
-        $request->validate([
-            'token' => 'required',
-            'email' => 'required|email|exists:users,email',
-            'password' => 'required|string|min:8|confirmed',
-        ]);
-        $status = Password::reset(
-            $request->only('email', 'password', 'password_confirmation', 'token'),
-            function ($user, $password) {
-                $user->forceFill([
-                    'password' => Hash::make($password)
-                ])->save();
-            }
-        );
-        return $status === Password::PASSWORD_RESET
-            ? redirect()->route('login')->with('success', __($status))
-            : back()->withErrors(['email' => [__($status)]]);
-    }
+    //     return $status === Password::RESET_LINK_SENT
+    //         ? back()->with('success', __($status))
+    //         : back()->withErrors(['email' => __($status)]);
+    // }
+    // public function ResetPassword($token)
+    // {
+    //     return view('Auth.PasswordReset', ['token' => $token]);
+    // }
+    // public function ResetPasswordStore(Request $request)
+    // {
+    //     $request->validate([
+    //         'token' => 'required',
+    //         'email' => 'required|email|exists:users,email',
+    //         'password' => 'required|string|min:8|confirmed',
+    //     ]);
+    //     $status = Password::reset(
+    //         $request->only('email', 'password', 'password_confirmation', 'token'),
+    //         function ($user, $password) {
+    //             $user->forceFill([
+    //                 'password' => Hash::make($password)
+    //             ])->save();
+    //         }
+    //     );
+    //     return $status === Password::PASSWORD_RESET
+    //         ? redirect()->route('login')->with('success', __($status))
+    //         : back()->withErrors(['email' => [__($status)]]);
+    // }
 }

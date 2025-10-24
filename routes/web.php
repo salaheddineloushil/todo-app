@@ -4,16 +4,13 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CategorieController;
 use App\Http\Controllers\TaskController;
 use App\Http\Controllers\UserController;
-use App\Mail\MyEmail;
 use App\Models\Categorie;
 use App\Models\Task;
 use App\Models\User;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
-use Mailjet\Client;
-use Mailjet\Resources;
+
+
 
 // Auth + verified users routes
 Route::middleware(['auth'])->group(function () {
@@ -60,8 +57,25 @@ Route::middleware('guest')->controller(AuthController::class)->group(function ()
     Route::post('/login', 'LoginStore')->name('LoginStore');
     Route::get('/signup', 'SignUp')->name('signup');
     Route::post('/signup', 'SignUpStore')->name('SignUpStore');
-    Route::get('/forgotPassword', 'ForgotPassword')->name('forgotPassword');
-    Route::post('/forgotPassword', 'ForgotPasswordStore')->name('ForgotPasswordStore');
-    Route::get('/resetPassword/{token}', 'ResetPassword')->name('password.reset');
-    Route::post('/resetPassword', 'ResetPasswordStore')->name('password.update');
+    // Route::get('/forgotPassword', 'ForgotPassword')->name('forgotPassword');
+    // Route::post('/forgotPassword', 'ForgotPasswordStore')->name('ForgotPasswordStore');
+    // Route::get('/resetPassword/{token}', 'ResetPassword')->name('password.reset');
+    // Route::post('/resetPassword', 'ResetPasswordStore')->name('password.update');
 });
+
+// // صفحة تأكيد الايميل
+// Route::get('/email/verify', function () {
+//     return view('auth.verify-email');
+// })->middleware('auth')->name('verification.notice');
+
+// // تأكيد الايميل من اللينك
+// Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
+//     $request->fulfill();
+//     return redirect('/home'); // redirect بعد verification
+// })->middleware(['auth', 'signed'])->name('verification.verify');
+
+// // إعادة إرسال لينك التحقق
+// Route::post('/email/verification-notification', function (Request $request) {
+//     $request->user()->sendEmailVerificationNotification();
+//     return back()->with('resent', true);
+// })->middleware(['auth', 'throttle:6,1'])->name('verification.resend');

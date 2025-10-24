@@ -52,7 +52,7 @@
                     </div>
 
                     <div class="links p-3">
-                        <a href="/forgotPassword">Forget Password?</a>
+                        {{-- <a href="/forgotPassword">Forget Password?</a> --}}
                         <a href="/signup">Signup</a>
                     </div>
                 </form>

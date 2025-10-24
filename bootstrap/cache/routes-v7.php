@@ -102,7 +102,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::13mQ8WkPyZzNXk0x',
+            '_route' => 'generated::oGAaC7httnoIyWle',
           ),
           1 => NULL,
           2 => 
@@ -395,65 +395,10 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      '/forgotPassword' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'forgotPassword',
-          ),
-          1 => NULL,
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-        1 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'ForgotPasswordStore',
-          ),
-          1 => NULL,
-          2 => 
-          array (
-            'POST' => 0,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
-      '/resetPassword' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'password.update',
-          ),
-          1 => NULL,
-          2 => 
-          array (
-            'POST' => 0,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
     ),
     2 => 
     array (
-      0 => '{^(?|/users/([^/]++)(?|(*:25)|/edit(*:37)|(*:44))|/tasks/([^/]++)(?|(*:70)|/edit(*:82)|(*:89))|/myTasks/([^/]++)(*:114)|/categories/([^/]++)(?|/edit(*:150)|(*:158))|/resetPassword/([^/]++)(*:190))/?$}sDu',
+      0 => '{^(?|/users/([^/]++)(?|(*:25)|/edit(*:37)|(*:44))|/tasks/([^/]++)(?|(*:70)|/edit(*:82)|(*:89))|/myTasks/([^/]++)(*:114)|/categories/([^/]++)(?|/edit(*:150)|(*:158)))/?$}sDu',
     ),
     3 => 
     array (
@@ -740,30 +685,7 @@ app('router')->setCompiledRoutes(
           5 => true,
           6 => NULL,
         ),
-      ),
-      190 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'password.reset',
-          ),
-          1 => 
-          array (
-            0 => 'token',
-          ),
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => true,
-          6 => NULL,
-        ),
-        1 => 
+        3 => 
         array (
           0 => NULL,
           1 => NULL,
@@ -925,7 +847,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::13mQ8WkPyZzNXk0x' => 
+    'generated::oGAaC7httnoIyWle' => 
     array (
       'methods' => 
       array (
@@ -942,13 +864,13 @@ app('router')->setCompiledRoutes(
         ),
         'uses' => 'O:47:"Laravel\\SerializableClosure\\SerializableClosure":1:{s:12:"serializable";O:46:"Laravel\\SerializableClosure\\Serializers\\Signed":2:{s:12:"serializable";s:295:"O:46:"Laravel\\SerializableClosure\\Serializers\\Native":5:{s:3:"use";a:0:{}s:8:"function";s:77:"function (\\Illuminate\\Http\\Request $request) {
     return $request->user();
-}";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"000000003f424906000000001ae11bba";}";s:4:"hash";s:44:"oCjDs9gVhfOCE7iVzsO4Ekv+BrWQsC/Ju5D1XHBF1PE=";}}',
+}";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"0000000069f5800b000000006999df28";}";s:4:"hash";s:44:"sYP7Fo51vY82zcHPAWMsDRBK335eozKuMP+Ac2PparM=";}}',
         'namespace' => NULL,
         'prefix' => 'api',
         'where' => 
         array (
         ),
-        'as' => 'generated::13mQ8WkPyZzNXk0x',
+        'as' => 'generated::oGAaC7httnoIyWle',
       ),
       'fallback' => false,
       'defaults' => 
@@ -984,7 +906,7 @@ app('router')->setCompiledRoutes(
         $categories = \\App\\Models\\Categorie::count();
         $tasks = \\App\\Models\\Task::count();
         return \\view(\'Dashboard\', \\compact(\'users\', \'categories\', \'tasks\'));
-    }";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"000000003f424902000000001ae11bba";}";s:4:"hash";s:44:"2nIcXlTwZCMFkQf79Y0TZaOTJnN9HK2UNeIH+915X9U=";}}',
+    }";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"0000000069f583f7000000006999df28";}";s:4:"hash";s:44:"zE/OwDtyexspOV+F43xie2PKOMqWn+naQ7aI54S61CI=";}}',
         'namespace' => NULL,
         'prefix' => '',
         'where' => 
@@ -2030,156 +1952,6 @@ app('router')->setCompiledRoutes(
         array (
         ),
         'as' => 'SignUpStore',
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'forgotPassword' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'forgotPassword',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'guest',
-        ),
-        'uses' => 'App\\Http\\Controllers\\AuthController@ForgotPassword',
-        'controller' => 'App\\Http\\Controllers\\AuthController@ForgotPassword',
-        'namespace' => NULL,
-        'prefix' => '',
-        'where' => 
-        array (
-        ),
-        'as' => 'forgotPassword',
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'ForgotPasswordStore' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'POST',
-      ),
-      'uri' => 'forgotPassword',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'guest',
-        ),
-        'uses' => 'App\\Http\\Controllers\\AuthController@ForgotPasswordStore',
-        'controller' => 'App\\Http\\Controllers\\AuthController@ForgotPasswordStore',
-        'namespace' => NULL,
-        'prefix' => '',
-        'where' => 
-        array (
-        ),
-        'as' => 'ForgotPasswordStore',
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'password.reset' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'resetPassword/{token}',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'guest',
-        ),
-        'uses' => 'App\\Http\\Controllers\\AuthController@ResetPassword',
-        'controller' => 'App\\Http\\Controllers\\AuthController@ResetPassword',
-        'namespace' => NULL,
-        'prefix' => '',
-        'where' => 
-        array (
-        ),
-        'as' => 'password.reset',
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'password.update' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'POST',
-      ),
-      'uri' => 'resetPassword',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'guest',
-        ),
-        'uses' => 'App\\Http\\Controllers\\AuthController@ResetPasswordStore',
-        'controller' => 'App\\Http\\Controllers\\AuthController@ResetPasswordStore',
-        'namespace' => NULL,
-        'prefix' => '',
-        'where' => 
-        array (
-        ),
-        'as' => 'password.update',
       ),
       'fallback' => false,
       'defaults' => 
