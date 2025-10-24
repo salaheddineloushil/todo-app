@@ -24,7 +24,7 @@ Route::middleware(['auth'])->group(function () {
     })->name('Dashboard');
 
     // Users
-    Route::resource('users', UserController::class)->middleware('role:manager:admin');
+    Route::resource('users', UserController::class)->middleware('role:manager,admin');
 
     Route::middleware('role:manager,admin,user')->group(function () {
         Route::resource('users', UserController::class)->only('show');

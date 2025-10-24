@@ -102,7 +102,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::3wJgiV9VUuQmBg18',
+            '_route' => 'generated::nj3zRqd0aEvvyo0I',
           ),
           1 => NULL,
           2 => 
@@ -847,7 +847,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::3wJgiV9VUuQmBg18' => 
+    'generated::nj3zRqd0aEvvyo0I' => 
     array (
       'methods' => 
       array (
@@ -864,13 +864,13 @@ app('router')->setCompiledRoutes(
         ),
         'uses' => 'O:47:"Laravel\\SerializableClosure\\SerializableClosure":1:{s:12:"serializable";O:46:"Laravel\\SerializableClosure\\Serializers\\Signed":2:{s:12:"serializable";s:295:"O:46:"Laravel\\SerializableClosure\\Serializers\\Native":5:{s:3:"use";a:0:{}s:8:"function";s:77:"function (\\Illuminate\\Http\\Request $request) {
     return $request->user();
-}";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"000000003446cab100000000365e1a11";}";s:4:"hash";s:44:"arhs1AqV0tlm2ViNbhzxyURd2XcKjF7ndyplvcFXg6k=";}}',
+}";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"000000005f12105d000000006cdbb407";}";s:4:"hash";s:44:"KZ1c/LqU/u48gJHMuOP3XXf5bwBLXKu7FRSXQNew8V0=";}}',
         'namespace' => NULL,
         'prefix' => 'api',
         'where' => 
         array (
         ),
-        'as' => 'generated::3wJgiV9VUuQmBg18',
+        'as' => 'generated::nj3zRqd0aEvvyo0I',
       ),
       'fallback' => false,
       'defaults' => 
@@ -906,7 +906,7 @@ app('router')->setCompiledRoutes(
         $categories = \\App\\Models\\Categorie::count();
         $tasks = \\App\\Models\\Task::count();
         return \\view(\'Dashboard\', \\compact(\'users\', \'categories\', \'tasks\'));
-    }";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"000000003446c94d00000000365e1a11";}";s:4:"hash";s:44:"dR6yJzjgX/UZ6R+P9CqBS5eZjFofPtbXMkH9yVTIOlM=";}}',
+    }";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"000000005f1213a1000000006cdbb407";}";s:4:"hash";s:44:"70aJXeqAZV7Lniui12Y47q4HnD4z4XTUmOfXDg9XD1E=";}}',
         'namespace' => NULL,
         'prefix' => '',
         'where' => 
@@ -942,7 +942,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 'web',
           1 => 'auth',
-          2 => 'role:manager:admin',
+          2 => 'role:manager,admin',
         ),
         'as' => 'users.index',
         'uses' => 'App\\Http\\Controllers\\UserController@index',
@@ -981,7 +981,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 'web',
           1 => 'auth',
-          2 => 'role:manager:admin',
+          2 => 'role:manager,admin',
         ),
         'as' => 'users.create',
         'uses' => 'App\\Http\\Controllers\\UserController@create',
@@ -1019,7 +1019,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 'web',
           1 => 'auth',
-          2 => 'role:manager:admin',
+          2 => 'role:manager,admin',
         ),
         'as' => 'users.store',
         'uses' => 'App\\Http\\Controllers\\UserController@store',
@@ -1097,7 +1097,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 'web',
           1 => 'auth',
-          2 => 'role:manager:admin',
+          2 => 'role:manager,admin',
         ),
         'as' => 'users.edit',
         'uses' => 'App\\Http\\Controllers\\UserController@edit',
@@ -1136,7 +1136,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 'web',
           1 => 'auth',
-          2 => 'role:manager:admin',
+          2 => 'role:manager,admin',
         ),
         'as' => 'users.update',
         'uses' => 'App\\Http\\Controllers\\UserController@update',
@@ -1174,7 +1174,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 'web',
           1 => 'auth',
-          2 => 'role:manager:admin',
+          2 => 'role:manager,admin',
         ),
         'as' => 'users.destroy',
         'uses' => 'App\\Http\\Controllers\\UserController@destroy',
