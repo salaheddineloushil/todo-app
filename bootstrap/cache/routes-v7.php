@@ -102,7 +102,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::oGAaC7httnoIyWle',
+            '_route' => 'generated::3wJgiV9VUuQmBg18',
           ),
           1 => NULL,
           2 => 
@@ -847,7 +847,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::oGAaC7httnoIyWle' => 
+    'generated::3wJgiV9VUuQmBg18' => 
     array (
       'methods' => 
       array (
@@ -864,13 +864,13 @@ app('router')->setCompiledRoutes(
         ),
         'uses' => 'O:47:"Laravel\\SerializableClosure\\SerializableClosure":1:{s:12:"serializable";O:46:"Laravel\\SerializableClosure\\Serializers\\Signed":2:{s:12:"serializable";s:295:"O:46:"Laravel\\SerializableClosure\\Serializers\\Native":5:{s:3:"use";a:0:{}s:8:"function";s:77:"function (\\Illuminate\\Http\\Request $request) {
     return $request->user();
-}";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"0000000069f5800b000000006999df28";}";s:4:"hash";s:44:"sYP7Fo51vY82zcHPAWMsDRBK335eozKuMP+Ac2PparM=";}}',
+}";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"000000003446cab100000000365e1a11";}";s:4:"hash";s:44:"arhs1AqV0tlm2ViNbhzxyURd2XcKjF7ndyplvcFXg6k=";}}',
         'namespace' => NULL,
         'prefix' => 'api',
         'where' => 
         array (
         ),
-        'as' => 'generated::oGAaC7httnoIyWle',
+        'as' => 'generated::3wJgiV9VUuQmBg18',
       ),
       'fallback' => false,
       'defaults' => 
@@ -906,7 +906,7 @@ app('router')->setCompiledRoutes(
         $categories = \\App\\Models\\Categorie::count();
         $tasks = \\App\\Models\\Task::count();
         return \\view(\'Dashboard\', \\compact(\'users\', \'categories\', \'tasks\'));
-    }";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"0000000069f583f7000000006999df28";}";s:4:"hash";s:44:"zE/OwDtyexspOV+F43xie2PKOMqWn+naQ7aI54S61CI=";}}',
+    }";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"000000003446c94d00000000365e1a11";}";s:4:"hash";s:44:"dR6yJzjgX/UZ6R+P9CqBS5eZjFofPtbXMkH9yVTIOlM=";}}',
         'namespace' => NULL,
         'prefix' => '',
         'where' => 
