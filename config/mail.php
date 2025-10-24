@@ -49,7 +49,7 @@ return [
             'transport' => 'ses',
         ],
         'mailjet' => [
-            'transport' => 'mailjet', // مجرد تسمية، الكود غادي يستعمل SDK مباشرة
+            'transport' => 'mailjet',
         ],
 
 

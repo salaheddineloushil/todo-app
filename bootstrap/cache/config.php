@@ -503,11 +503,11 @@
       'smtp' => 
       array (
         'transport' => 'smtp',
-        'host' => 'smtp.gmail.com',
+        'host' => 'smtp-relay.brevo.com',
         'port' => '587',
         'encryption' => 'tls',
-        'username' => 'salahlsh4@gmail.com',
-        'password' => 'qwnylhdiiuuuymyd',
+        'username' => 'TODO_APP',
+        'password' => 'xsmtpsib-52f5598c5cd4476ea7cc6463fd67f351953e14c048d90b69104099b226f4bf39-sqz3wHV6y25en7Lb',
         'timeout' => NULL,
         'local_domain' => NULL,
       ),
